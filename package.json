@@ -1,0 +1,24 @@
+{
+  "name": "mobizon",
+  "version": "0.1.0",
+  "description": "Library for Mobizon SMS API",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mobizon",
+    "sms",
+    "api"
+  ],
+  "author": "Nurzhan <nurzhan@tuta.io>",
+  "license": "ISC",
+  "dependencies": {
+    "harmony-reflect": "^1.4.6",
+    "request": "^2.73.0"
+  }
+}
