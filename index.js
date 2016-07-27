@@ -44,6 +44,9 @@ mobizonModuleProxyHandler = {
             }
             callbackFunction(error, null);
           }
+          else if (!isJsonQuery) {
+            callbackFunction(null, requestBody)
+          }
           else if (requestBody.code != 0) {
             error = {
               code: requestBody.code,
