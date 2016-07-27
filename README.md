@@ -26,9 +26,9 @@
 # Примеры реализации типичных сценариев
     mobizon = require(mobizon)("Ваш ключ API");
     // Получение состояния баланса
-    mobizon.User.GetOwnBalance()
+    mobizon.User.GetOwnBalance({}, callbackFunction(error, data))
     // Отправка SMS сообщения
-    mobizon.Message.SendSMSMessage({recipient: '+77778227450', text: 'Success'})
+    mobizon.Message.SendSMSMessage({recipient: 'PHONE_NUMBER', text: 'Success'}, callbackFunction(error, data))
 
 ---
 
@@ -61,6 +61,6 @@ If you have own examples of integration, please help us improve our code base - 
 
     mobizon = require(mobizon)("YOUR API KEY");
     // Get balance amount
-    mobizon.User.GetOwnBalance()
+    mobizon.User.GetOwnBalance({}, callbackFunction(error, data))
     // Send SMS message
-    mobizon.Message.SendSMSMessage({recipient: '+77778227450', text: 'Success'})
+    mobizon.Message.SendSMSMessage({recipient: 'PHONE_NUMBER', text: 'Success'}, callbackFunction(error, data))
