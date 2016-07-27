@@ -22,7 +22,7 @@ mobizonProxyHandler = {
 
 mobizonModuleProxyHandler = {
   get: function(target, apiMethod) {
-    mobizonRequest = function(queryString, callbackFunction){
+    mobizonMethod = function(queryString, callbackFunction){
       if (!queryString) {
         queryString = {};
       }
@@ -35,12 +35,36 @@ mobizonModuleProxyHandler = {
         json: isJsonQuery,
         qs: queryString
       };
-      request(request_options, function (error, response, body) {
+      request(request_options, function (requestError, requestResponse, requestBody) {
         if (callbackFunction) {
-          callbackFunction(error, body);
+          if (requestError || requestResponse.statusCode != 200) {
+            error = {
+              code: 999,
+              message: 'No network connection or cannot reach the server'
+            }
+            callbackFunction(error, null);
+          }
+          else if (requestBody.code != 0) {
+            error = {
+              code: requestBody.code,
+              message: requestBody.message,
+              data: requestBody.data
+            }
+            callbackFunction(error, null);
+          }
+          else if (requestBody.code == 0) {
+            callbackFunction(null, requestBody.data)
+          }
+          else {
+            error = {
+              code: 500,
+              message: 'Неизвестная ошибка приложения'
+            }
+            callbackFunction(error, null)
+          }
         }
       })
     }
-    return mobizonRequest;
+    return mobizonMethod;
   }
 }
