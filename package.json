@@ -3,18 +3,15 @@
   "version": "0.2.0",
   "description": "Library for Mobizon SMS API",
   "main": "index.js",
-  "directories": {
-    "example": "examples",
-    "test": "tests"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "mobizon",
     "sms",
     "api"
   ],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/nurzhanpy/mobizon-node"
+  },
   "author": "Nurzhan <nurzhan@tuta.io>",
   "license": "ISC",
   "dependencies": {
