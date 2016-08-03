@@ -10,9 +10,9 @@
   ],
   "repository": {
     "type" : "git",
-    "url" : "https://github.com/nurzhanpy/mobizon-node"
+    "url" : "https://github.com/allprime/mobizon-node"
   },
-  "author": "Nurzhan <nurzhan@tuta.io>",
+  "author": "Nurzhan <nurzhan@allpri.me>",
   "license": "ISC",
   "dependencies": {
     "harmony-reflect": "^1.4.6",
