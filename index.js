@@ -26,12 +26,19 @@ let mobizonModuleProxyHandler = {
       if (!queryString) {
         queryString = {};
       }
+
+      let testBaseUrl = false;
+      if (queryString.testBaseUrl) {
+        testBaseUrl = queryString.testBaseUrl;
+        delete queryString["testBaseUrl"];
+      }
+
       let isJsonQuery = !(queryString.output && queryString.output != 'json') // mobizon support XML too, but by default mobizon use JSON
 
       queryString.apiKey = target.apiKey;
 
       let request_options = {
-        baseUrl: 'https://api.mobizon.com/service/',
+        baseUrl: testBaseUrl || 'https://api.mobizon.com/service/',
         url: target.apiModule + '/' + apiMethod,
         followRedirect: false,
         json: isJsonQuery,
