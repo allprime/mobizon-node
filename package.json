@@ -9,13 +9,16 @@
     "api"
   ],
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/allprime/mobizon-node"
+    "type": "git",
+    "url": "https://github.com/allprime/mobizon-node"
   },
   "author": "Nurzhan <nurzhan@allpri.me>",
   "license": "ISC",
   "dependencies": {
     "harmony-reflect": "^1.4.6",
     "request": "^2.73.0"
+  },
+  "devDependencies": {
+    "nock": "^8.0.0"
   }
 }
